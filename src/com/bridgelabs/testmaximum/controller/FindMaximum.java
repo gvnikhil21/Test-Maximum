@@ -37,7 +37,10 @@ public class FindMaximum {
 
 	public static Float findMaxFloat(Float x, Float y, Float z) {
 		Float max = x;
-
+		if (y.compareTo(max) > 0)
+			max = y;
+		if (z.compareTo(max) > 0)
+			max = z;
 		printMaxFloat(max, x, y, z);
 		return max;
 	}
