@@ -55,5 +55,4 @@ public class FindMaximum<E extends Comparable<E>> {
 	private static <E> void printMax(E max) {
 		System.out.println("Maximum is : " + max);
 	}
-
 }
