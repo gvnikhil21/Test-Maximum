@@ -13,13 +13,14 @@ public class FindMaximum {
 		findMaxInteger(x, y, z);
 	}
 
-	private static void findMaxInteger(Integer x, Integer y, Integer z) {
+	public static Integer findMaxInteger(Integer x, Integer y, Integer z) {
 		Integer max = x;
 		if (y.compareTo(max) > 0)
 			max = y;
 		if (z.compareTo(max) > 0)
 			max = z;
 		printMaxInteger(max, x, y, z);
+		return max;
 	}
 
 	private static void printMaxInteger(Integer max, Integer x, Integer y, Integer z) {
