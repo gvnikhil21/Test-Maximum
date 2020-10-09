@@ -20,6 +20,11 @@ public class FindMaximum<E extends Comparable<E>> {
 		new FindMaximum<Integer>(xInt, yInt, zInt).findMaximum();
 		new FindMaximum<Float>(xFloat, yFloat, zFloat).findMaximum();
 		new FindMaximum<String>(xString, yString, zString).findMaximum();
+
+		System.out.println("Printing max using variable args : ");
+		findMax(10, 5, 0, 30, 25);
+		findMax(10.5f, 5.5f, 0f, 30.5f, 25.5f);
+		findMax("Apple", "Banana", "Mango", "Guava", "Orange");
 	}
 
 	public E findMaximum() {
@@ -32,12 +37,23 @@ public class FindMaximum<E extends Comparable<E>> {
 			max = y;
 		if (z.compareTo(max) > 0)
 			max = z;
-		printMax(max, x, y, z);
+		printMax(max);
 		return max;
 	}
 
-	private static <E> void printMax(E max, E x, E y, E z) {
-		System.out.println("Maximum of " + x + ", " + y + ", " + z + " is : " + max);
+	public static <E extends Comparable<E>> E findMax(E... x) {
+		E max = x[0];
+		for (E y : x) {
+			if (y.compareTo(max) > 0)
+				max = y;
+		}
+
+		printMax(max);
+		return max;
+	}
+
+	private static <E> void printMax(E max) {
+		System.out.println("Maximum is : " + max);
 	}
 
 }
