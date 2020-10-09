@@ -12,4 +12,10 @@ public class FindMaximumTest {
 		Integer max = FindMaximum.findMaxInteger(10, 5, 8);
 		assertEquals(Integer.valueOf(10), Integer.valueOf(max));
 	}
+
+	@Test
+	public void givenMaxInteger_AtSecondPosition_ShouldReturnSameInteger() {
+		Integer max = FindMaximum.findMaxInteger(5, 10, 8);
+		assertEquals(Integer.valueOf(10), Integer.valueOf(max));
+	}
 }
