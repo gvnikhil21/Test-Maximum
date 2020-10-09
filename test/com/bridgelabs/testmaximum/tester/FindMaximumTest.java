@@ -36,4 +36,10 @@ public class FindMaximumTest {
 		Float max = FindMaximum.findMaxFloat(5.5f, 10.5f, 8.5f);
 		assertEquals(Float.valueOf(10.5f), max);
 	}
+
+	@Test
+	public void givenMaxFloat_AtThirdPosition_ShouldReturnSameFloat() {
+		Float max = FindMaximum.findMaxFloat(8.5f, 5.5f, 10.5f);
+		assertEquals(Float.valueOf(10.5f), max);
+	}
 }
