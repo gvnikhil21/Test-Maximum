@@ -1,28 +1,29 @@
 package com.bridgelabs.testmaximum.controller;
 
-public class FindMaximum {
+public class FindMaximum<E extends Comparable<E>> {
+	E x, y, z;
+
+	public FindMaximum(E x, E y, E z) {
+		this.x = x;
+		this.y = y;
+		this.z = z;
+	}
 
 	public static void main(String[] args) {
 		// welcome message
 		System.out.println("Welcome to Find Maximum");
 
-		// find max Integer
-		Integer xInt = 10;
-		Integer yInt = 5;
-		Integer zInt = 8;
-		findMax(xInt, yInt, zInt);
+		Integer xInt = 10, yInt = 5, zInt = 8;
+		Float xFloat = 10.5f, yFloat = 5.5f, zFloat = 8.5f;
+		String xString = "Apple", yString = "Peach", zString = "Banana";
 
-		// find max Float
-		Float xFloat = 10.5f;
-		Float yFloat = 5.5f;
-		Float zFloat = 8.5f;
-		findMax(xFloat, yFloat, zFloat);
+		new FindMaximum<Integer>(xInt, yInt, zInt).findMaximum();
+		new FindMaximum<Float>(xFloat, yFloat, zFloat).findMaximum();
+		new FindMaximum<String>(xString, yString, zString).findMaximum();
+	}
 
-		// find max String
-		String xString = "Apple";
-		String yString = "Peach";
-		String zString = "Banana";
-		findMax(xString, yString, zString);
+	public E findMaximum() {
+		return findMax(x, y, z);
 	}
 
 	public static <E extends Comparable<E>> E findMax(E x, E y, E z) {
